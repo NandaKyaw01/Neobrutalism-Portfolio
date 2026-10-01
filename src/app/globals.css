@@ -1,0 +1,112 @@
+@import "tailwindcss";
+
+@theme {
+  --font-heading: var(--font-space-grotesk), sans-serif;
+  --font-mono: var(--font-jetbrains-mono), monospace;
+  --font-sans: var(--font-space-grotesk), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+
+  --color-neo-yellow: #FFE600;
+  --color-neo-pink: #FF66B2;
+  --color-neo-teal: #00F0FF;
+  --color-neo-green: #00E676;
+  --color-neo-purple: #B388FF;
+  --color-neo-orange: #FF5E3A;
+  --color-neo-cream: #FFFDF5;
+  --color-neo-dark: #121212;
+  --color-neo-black: #000000;
+  --color-neo-white: #FFFFFF;
+}
+
+/* Global Neobrutalism Base Styles */
+html {
+  scroll-behavior: smooth;
+  background-color: #FFFDF5;
+  color: #000000;
+}
+
+body {
+  font-family: var(--font-space-grotesk), -apple-system, BlinkMacSystemFont, sans-serif;
+  background-color: #FFFDF5;
+  color: #000000;
+  overflow-x: hidden;
+}
+
+/* Custom Selection */
+::selection {
+  background-color: #FFE600;
+  color: #000000;
+}
+
+/* Hard-edged Neobrutalist Scrollbar */
+::-webkit-scrollbar {
+  width: 14px;
+  height: 14px;
+}
+
+::-webkit-scrollbar-track {
+  background: #FFFDF5;
+  border-left: 3px solid #000000;
+  border-top: 3px solid #000000;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #FFE600;
+  border: 3px solid #000000;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #FF66B2;
+}
+
+/* Infinite Marquee Animation */
+@keyframes marquee-scroll {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  display: flex;
+  width: max-content;
+  animation: marquee-scroll 30s linear infinite;
+}
+
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
+
+/* Pulsing LED status dot */
+@keyframes retro-pulse {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.4;
+    transform: scale(0.9);
+  }
+}
+
+.animate-retro-pulse {
+  animation: retro-pulse 1.8s ease-in-out infinite;
+}
+
+/* Utility to ensure zero blurred shadows anywhere */
+.hard-shadow-sm {
+  box-shadow: 2px 2px 0px 0px #000000;
+}
+
+.hard-shadow {
+  box-shadow: 4px 4px 0px 0px #000000;
+}
+
+.hard-shadow-lg {
+  box-shadow: 6px 6px 0px 0px #000000;
+}
+
+.hard-shadow-xl {
+  box-shadow: 8px 8px 0px 0px #000000;
+}
